@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پیش‌فاکتور رسمی - INV-ASHP-2025-8492</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #27ae60;
+            --font: 'Vazir', sans-serif;
+        }
+
+        body {
+            font-family: var(--font);
+            background: #f8f9fa;
+            margin: 1rem;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .watermark {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 4rem;
+            transform: rotate(-30deg);
+            top: 40%;
+            left: 20%;
+            color: var(--primary);
+        }
+
+        .section {
+            background: #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 1rem;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            font-weight: 500;
+        }
+
+        .total-row {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .signature-box {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            border-top: 2px dashed var(--primary);
+        }
+
+        .financial-notes {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #e9ecef;
+            border-radius: 8px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        @media print {
+            body { background: white; }
+            .watermark { display: none; }
+            button { display: none; }
+            .section {
+                background: white; /* برای چاپ، پس‌زمینه سفید */
+                border: none; /* حذف حاشیه */
+                padding: 0; /* حذف پدینگ */
+                margin: 0; /* حذف مارژین */
+            }
+            table {
+                border: none; /* حذف حاشیه جدول */
+            }
+            th, td {
+                border: 1px solid black; /* حاشیه مشکی برای جدول */
+            }
+            th {
+                background: var(--primary); /* پس‌زمینه رنگی برای هدر جدول */
+                color: white; /* متن سفید برای هدر */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="watermark">پیش‌فاکتور رسمی</div>
+
+        <!-- بخش هدر پیش فاکتور -->
+        <div class="section">
+            <div class="invoice-header">
+                <h1>پیش فاکتور</h1>
+                <p>تاریخ: ۱۱ بهمن ۱۴۰۳</p>
+                <p>شماره فاکتور: INV-ASHP-2025-8492</p>
+                <div class="invoice-status">در انتظار پرداخت</div>
+            </div>
+        </div>
+
+        <!-- بخش اطلاعات فروشنده -->
+        <div class="section">
+            <h2>فروشنده</h2>
+            <p>آشپزخانه مرکزی لاین</p>
+            <p>تهران، کوهدشت، منطقه صنعتی شریف‌آباد</p>
+            <p>کارشناس فروش: سعید نامداران | تلفن: ۳۱۸</p>
+        </div>
+
+        <!-- بخش اطلاعات خریدار -->
+        <div class="section">
+            <h2>خریدار</h2>
+            <h3>گروه توسعه و تحقیق استودیو دیجیتال مارکتینگ ایران</h3>
+            <p>نماینده: جناب آقای رضایی | تلفن: ۰۹۳۰۱۰۶۰۴۰۸</p>
+            <p>آدرس: شیراز، بلوار تاچارا، بعد از پارک علوی، کوچه ۶، خانه خلاق آبی</p>
+            <p>تاریخ صدور: ۱۱ بهمن ۱۴۰۳</p>
+        </div>
+
+        <!-- جدول کالاها -->
+        <table>
+            <thead>
+                <tr>
+                    <th width="100">کد کالا</th>
+                    <th>نام کالا</th>
+                    <th width="120">قیمت واحد</th>
+                    <th width="80">تعداد</th>
+                    <th width="150">مبلغ کل</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="product-code">T-18C</td>
+                    <td>توری روغن گیر استیل ۱۸ سانتیمتری</td>
+                    <td>۲۳۸,۴۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۲۳۸,۴۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">ASHP-9C3D</td>
+                    <td>کاسه استیل ۳۴ سانتیمتری</td>
+                    <td>۱,۱۴۶,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۱,۱۴۶,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">P-40X30</td>
+                    <td>تخته کار پلی اتیلن سفید ۴۰×۳۰ سانتیمتری</td>
+                    <td>۱,۰۹۰,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۱,۰۹۰,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">W-34A</td>
+                    <td>تابه وک آلومینیومی ۳۴ سانتیمتری</td>
+                    <td>۲,۰۹۰,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۲,۰۹۰,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">P-500</td>
+                    <td>پارچ مدرج شیشهای ۵۰۰ میلیلیتری پاشاباغچه</td>
+                    <td>۸۴۰,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۸۴۰,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">K-20B</td>
+                    <td>چاقو سرآشپز ۲۰ سانتیمتری بداف دسته مشکی (TRAMUNTENA)</td>
+                    <td>۷۵۱,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۷۵۱,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">P-14B</td>
+                    <td>پوست کن ۱۴ سانتیمتری بداف</td>
+                    <td>۱۵۹,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۱۵۹,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">K-12B</td>
+                    <td>چاقو آشپزخانه ۱۲ سانتیمتری برگهف دسته مشکی</td>
+                    <td>۸۰۵,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۸۰۵,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">R-11G</td>
+                    <td>رنده تخت دندانه درشت استیل ۱۱×۱۸ سانتیمتری</td>
+                    <td>۲۴۴,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۲۴۴,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">R-11F</td>
+                    <td>رنده تخت دندانه ریز استیل ۱۱×۱۸ سانتیمتری</td>
+                    <td>۲۳۱,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۲۳۱,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">B-25</td>
+                    <td>قلمو سیلیکونی ۲۵.۵ سانتیمتری</td>
+                    <td>۳۷,۷۰۰</td>
+                    <td>۳</td>
+                    <td class="total-price">۱۱۳,۱۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">P-25</td>
+                    <td>تابه آلومینیومی چکشی بدون دسته ۲۵ سانتیمتری</td>
+                    <td>۲۴۲,۰۰۰</td>
+                    <td>۶</td>
+                    <td class="total-price">۱,۴۵۲,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">B-470</td>
+                    <td>بطری سس ۴۷۰ میلیلیتری پلاستیکی مشکی کیچن تک</td>
+                    <td>۵۶,۷۰۰</td>
+                    <td>۵</td>
+                    <td class="total-price">۲۸۳,۵۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">P-26.5</td>
+                    <td>تابه آلومینیومی چکشی ۲۶.۵ سانتیمتری</td>
+                    <td>۳۶۱,۰۰۰</td>
+                    <td>۴</td>
+                    <td class="total-price">۱,۴۴۴,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">P-18.5</td>
+                    <td>تابه آلومینیومی چکشی ۱۸.۵ سانتیمتری</td>
+                    <td>۲۴۷,۰۰۰</td>
+                    <td>۴</td>
+                    <td class="total-price">۹۸۸,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">P-304</td>
+                    <td>پودر پاش استیل با سری توری</td>
+                    <td>۳۰۴,۰۰۰</td>
+                    <td>۳</td>
+                    <td class="total-price">۹۱۲,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">H-3</td>
+                    <td>قلاب آویز نگهدارنده تابه و قابلمه</td>
+                    <td>۸۵,۲۰۰</td>
+                    <td>۳</td>
+                    <td class="total-price">۲۵۵,۶۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">L-18</td>
+                    <td>آبلیمو گیر دستی قیف دار ۱۸ سانتیمتری سیلیکونی ام بی</td>
+                    <td>۳۱۶,۰۰۰</td>
+                    <td>۲</td>
+                    <td class="total-price">۶۳۲,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">P-2000</td>
+                    <td>پارچ مدرج پلاستیکی ۲۰۰۰ میلی لیتری</td>
+                    <td>۴۱۷,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۴۱۷,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">G-17</td>
+                    <td>سیر کوب دستی ۱۷ سانتیمتری استیل</td>
+                    <td>۶۰۸,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۶۰۸,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">S-28X38</td>
+                    <td>سینی استیل ۲۸×۳۸ سانتیمتری</td>
+                    <td>۷۸۶,۰۰۰</td>
+                    <td>۲</td>
+                    <td class="total-price">۱,۵۷۲,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">S-27X34</td>
+                    <td>سینی استیل ۲۷×۳۴ سانتیمتری</td>
+                    <td>۶۴۶,۰۰۰</td>
+                    <td>۲</td>
+                    <td class="total-price">۱,۲۹۲,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">M-40</td>
+                    <td>همزن دستی استیل ۴۰ سانتیمتری</td>
+                    <td>۵۰۸,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۵۰۸,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">P-20</td>
+                    <td>تابه تفلون ۲۰ سانتیمتری کیچن تک</td>
+                    <td>۹۲۸,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۹۲۸,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">S-22Y</td>
+                    <td>انبر سرو استیل ۲۲ سانتیمتری زرد</td>
+                    <td>۱۹۷,۰۰۰</td>
+                    <td>۲</td>
+                    <td class="total-price">۳۹۴,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">S-40</td>
+                    <td>انبر سرو استیل ۴۰ سانتیمتری</td>
+                    <td>۳۸۲,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۳۸۲,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">BM-1/4C</td>
+                    <td>بن ماری ۱/۴ پلی کربنات عمق ۱۰ شفاف به همراه در</td>
+                    <td>۱,۰۰۹,۰۰۰</td>
+                    <td>۴</td>
+                    <td class="total-price">۴,۰۳۶,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">BM-1/4B</td>
+                    <td>بن ماری ۱/۴ پلی کربنات عمق ۱۰ مشکی به همراه در</td>
+                    <td>۱,۰۰۹,۰۰۰</td>
+                    <td>۴</td>
+                    <td class="total-price">۴,۰۳۶,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">C-6</td>
+                    <td>قالب دونات ۶ خانه تفلونی</td>
+                    <td>۲۱۹,۰۰۰</td>
+                    <td>۲</td>
+                    <td class="total-price">۴۳۸,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">C-Rect</td>
+                    <td>توری مستطیل استیل خنک کننده کیک</td>
+                    <td>۳۳۱,۰۰۰</td>
+                    <td>۳</td>
+                    <td class="total-price">۹۹۳,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">C-12</td>
+                    <td>قالب کنافه ۱۲ سانتیمتری آلومینیومی</td>
+                    <td>۹۳,۶۰۰</td>
+                    <td>۳</td>
+                    <td class="total-price">۲۸۰,۸۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">S-25</td>
+                    <td>اسپاچولا پالت خم ۲۵ سانتیمتری استیل</td>
+                    <td>۱۰۵,۶۰۰</td>
+                    <td>۲</td>
+                    <td class="total-price">۲۱۱,۲۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">G-5</td>
+                    <td>گارنیش باکس ۵ خانه پلاستیکی ۵۰×۱۵ سانتیمتری</td>
+                    <td>۳,۵۴۰,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۳,۵۴۰,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">T-WC</td>
+                    <td>تابلو “سرویس بهداشتی آقایان/بانوان (WC)” آلومینیومی</td>
+                    <td>۱,۱۴۳,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۱,۱۴۳,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">T-NoSmoking</td>
+                    <td>تابلو “سیگار نکشید (No smoking)” آلومینیومی</td>
+                    <td>۱,۱۴۳,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۱,۱۴۳,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">R-60</td>
+                    <td>رگال فیش ۶۰ سانتیمتری استیل</td>
+                    <td>۷۷۷,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۷۷۷,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">S-23X23</td>
+                    <td>سینی سرویس کرافت ۲۳×۲۳ سانتیمتری (کارتن ۱۰۰ عددی)</td>
+                    <td>۵۰۵,۰۰۰</td>
+                    <td>۲</td>
+                    <td class="total-price">۱,۰۱۰,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">C-900</td>
+                    <td>ظرف سالاد یکبار مصرف کرافت ۹۰۰ میلی لیتری همراه در (کارتن ۳۰۰ عددی)</td>
+                    <td>۷,۰۵۶,۰۰۰</td>
+                    <td>۲</td>
+                    <td class="total-price">۱۴,۱۱۲,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">A-3J</td>
+                    <td>پیشبند جین سه جیب آبی با بند قهوهای آریا</td>
+                    <td>۱,۲۶۳,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۱,۲۶۳,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">D-6</td>
+                    <td>دستمال مشکی برند سارا فرم (بسته ۶ عددی)</td>
+                    <td>۱,۱۴۱,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۱,۱۴۱,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">H-Grey</td>
+                    <td>کلاه پشت گردنی طوسی روشن</td>
+                    <td>۲۸۶,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۲۸۶,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">H-Green</td>
+                    <td>کلاه پشت گردنی سبز</td>
+                    <td>۲۸۶,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۲۸۶,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">C-3XL</td>
+                    <td>روپوش سرآشپز آستین بلند با دکمه جداشو طوسی پوشاکو - ۳XL</td>
+                    <td>۹۹۸,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۹۹۸,۰۰۰</td>
+                </tr>
+                <tr>
+                    <td class="product-code">D-12</td>
+                    <td>دونات ساز ۱۲ عددی بست (Best) مدل PFYX-۱۲A</td>
+                    <td>۱۱,۸۰۰,۰۰۰</td>
+                    <td>۱</td>
+                    <td class="total-price">۱۱,۸۰۰,۰۰۰</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- محاسبه قیمت کل، تخفیف و مالیات -->
+        <div class="financial-notes">
+            <div>
+                <p>جمع کل: <span id="totalAmount" class="highlight">67,309,600</span> تومان</p>
+                <p>تخفیف (۱۲%): <span id="discountAmount" class="highlight">۰</span> تومان</p>
+                <p>مالیات: صفر و لحاظ نشده است</p>
+                <p>مبلغ قابل پرداخت: <span id="finalAmount" class="highlight">۰</span> تومان</p>
+            </div>
+        </div>
+
+        <!-- دکمه چاپ -->
+        <button onclick="window.print()">چاپ فاکتور</button>
+
+        <!-- بخش امضا و بارکد -->
+        <div class="signature-box">
+            <svg id="barcode"></svg>
+            <p>کد رهگیری: <span id="trackingCode" class="tracking-code">IRDM-8B2F-4C9A</span></p>
+            <div class="signature">
+                <img src="signature-placeholder.png" alt="امضا" style="height: 60px;">
+                <p>امضای دیجیتال: سعید نامداران</p>
+                <p class="en">Digital Signature: Saeed Namdaran</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // مقدار جمع کل
+            const total = 67309600;
+
+            // محاسبه تخفیف
+            const discountRate = 0.12;
+            const discountAmount = total * discountRate;
+
+            // مالیات صفر
+            const taxAmount = 0;
+
+            // محاسبه مبلغ قابل پرداخت
+            const finalAmount = total - discountAmount + taxAmount;
+
+            // به روز رسانی مقادیر در HTML
+            document.getElementById('totalAmount').innerText = new Intl.NumberFormat('fa-IR').format(total);
+            document.getElementById('discountAmount').innerText = `-${new Intl.NumberFormat('fa-IR').format(discountAmount)}`;
+            document.getElementById('finalAmount').innerText = new Intl.NumberFormat('fa-IR').format(finalAmount);
+
+            // تولید کد رهگیری
+            const generateTrackingCode = () => {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                let code = 'IRDM-';
+                for(let i=0; i<8; i++) {
+                    code += chars[Math.floor(Math.random() * chars.length)];
+                    if(i === 3) code += '-';
+                }
+                return code;
+            };
+
+            const trackingCode = generateTrackingCode();
+            document.getElementById('trackingCode').innerText = trackingCode;
+
+            // تولید بارکد
+            JsBarcode("#barcode", trackingCode, {
+                format: "CODE128",
+                lineColor: "#2c3e50",
+                width: 2,
+                height: 40,
+                displayValue: false
+            });
+        });
+    </script>
+</body>
+</html>
